@@ -10,6 +10,7 @@ export class CharacterSelectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
