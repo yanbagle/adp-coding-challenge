@@ -12,7 +12,7 @@ export class CharacterService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getCharacters(): Observable<Character[]> {
+  getCharacters(): Observable<any> {
     return this.httpClient.get<Character[]>(this.localJsonPath);
   }
 
