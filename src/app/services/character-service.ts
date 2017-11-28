@@ -4,15 +4,16 @@ import {Observable} from 'rxjs/Observable';
 import {Character} from '../character-selection/models/Character';
 
 @Injectable()
-export class MessageService {
+export class CharacterService {
 
   private url = '';
+  private localJsonPath = 'assets/characters.json';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getSomething(): Observable<Character[]> {
-    return this.httpClient.get<Character[]>(this.url);
+  getCharacters(): Observable<Character[]> {
+    return this.httpClient.get<Character[]>(this.localJsonPath);
   }
 
 }

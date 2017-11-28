@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CharacterService} from '../services/character-service';
 
 @Component({
   selector: 'app-character-selection',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterSelectionComponent implements OnInit {
 
-  constructor() { }
+  public characters = [];
+
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
-
+    this.characterService.getCharacters().subscribe( (data) => {
+      console.log(data);
+    });
   }
 
 }
