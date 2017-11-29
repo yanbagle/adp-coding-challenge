@@ -1,4 +1,4 @@
-# AdpFECodingChallenge
+# Adp Front End Coding Challenge
 
 Hi there! The app is hosted at https://yanzhang000.github.io/adp-coding-challenge/
 
