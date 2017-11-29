@@ -1,5 +1,16 @@
 <div class="container">
     <div *ngFor="let character of characters">
-      <button type="button" class="btn btn-outline-primary">{{character.name}}</button>
+      <button type="button" class="btn btn-outline-primary" (click)="emitSelection(character)" >{{character.name}}</button>
     </div>
+</div>
+
+<div class="container">
+  <div *ngFor="let film of films">
+    <div>
+      {{film.title}}
+    </div>
+    <div>
+      {{film.created | date:'EEEE, MMMM d, y'}}
+    </div>
+  </div>
 </div>

@@ -1,3 +1,5 @@
 <app-character-selection-display
-  [characters]="characters">
+  [characters]="characters.characters"
+  [films]="films"
+  (selectedCharacter)="getCharacterDetails($event)">
 </app-character-selection-display>
