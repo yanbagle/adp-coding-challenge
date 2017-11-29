@@ -12,6 +12,7 @@ export class CharacterSelectionDisplayComponent implements OnInit, OnChanges {
 
   @Input() characters;
   @Input() films;
+  @Input() error;
   @Output() selectedCharacter: EventEmitter<any> = new EventEmitter();
 
   constructor() { }

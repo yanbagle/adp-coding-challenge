@@ -1,16 +1,42 @@
 <div class="container">
-    <div *ngFor="let character of characters">
-      <button type="button" class="btn btn-outline-primary" (click)="emitSelection(character)" >{{character.name}}</button>
+  <div class="row">
+    <div class="col-3">
+        <div class="buttons" *ngFor="let character of characters">
+          <button type="button" class="btn btn-outline-primary" (click)="emitSelection(character)" >{{character.name}}</button>
+        </div>
     </div>
-</div>
 
-<div class="container">
-  <div *ngFor="let film of films">
-    <div>
-      {{film.title}}
+    <div class="col-9" *ngIf="!error">
+      <div class="row">
+        <div class="col">
+          <h2>Title</h2>
+        </div>
+        <div class="col">
+          <h2>Release Date</h2>
+        </div>
+        <div class="col">
+          <h2>Directed By</h2>
+        </div>
+      </div>
+
+      <div *ngFor="let film of films">
+        <div class="row">
+          <div class="col">
+            {{film.title}}
+          </div>
+          <div class="col">
+            {{film.created | date:'EEEE, MMMM d, y'}}
+          </div>
+          <div class="col">
+            {{film.director}}
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      {{film.created | date:'EEEE, MMMM d, y'}}
+
+    <div class="col-9" *ngIf="error">
+      <h1>Error: {{error.error.detail}} :(</h1>
     </div>
+
   </div>
 </div>
